@@ -1,4 +1,5 @@
 import React from "react";
+import { Container } from "react-bootstrap";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -6,37 +7,22 @@ import "./App.css";
 import MyNavBar from "./modules/MyNavBar";
 import MyFooter from "./modules/MyFooter";
 import MyJumbotron from "./modules/MyJumbotron";
-// import { Jumbotron, Button, Container } from "react-bootstrap";
-import Jumbotron from "react-bootstrap/Jumbotron";
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
+import MyShelf from "./modules/MyShelf";
+import SelectBooks from "./modules/SelectBooks";
 class App extends React.Component {
+  state = {
+    category: ["scifi", "horror", "fantasy", "romance", "history"],
+  };
   render() {
     return (
       <>
-        <MyNavBar title="M4-D2" />
-        <MyJumbotron />
-
+        <MyNavBar title="Book store!" />{" "}
         <Container>
-          <Jumbotron>
-            <h1>Hello, Jumbotron in a container!</h1>
-            <p>This should be a non-fluid jumbotron.</p>
-            <p>
-              <Button variant="primary">Learn more</Button>
-            </p>
-          </Jumbotron>
+          <MyJumbotron />
+          <MyShelf />
+          <SelectBooks />
+          <MyFooter />
         </Container>
-
-        <Jumbotron fluid>
-          <Container>
-            <h1>Fluid jumbotron</h1>
-            <p>
-              This is a modified jumbotron that occupies the entire horizontal
-              space of its parent.
-            </p>
-          </Container>
-        </Jumbotron>
-        <MyFooter />
       </>
     );
   }

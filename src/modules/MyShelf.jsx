@@ -11,13 +11,13 @@ class shelf extends Component {
         booksArr[Math.floor(Math.random() * booksArr.length - 1)]
       );
     }
-    console.log(booksArr, selectedBooks);
+    // console.log(booksArr, selectedBooks);
     return (
       <Container>
         <h4>Random Picks</h4>
         <Row className="justify-content-between no-gutters">
           {selectedBooks.map((b) => (
-            <Col xs={6} md={4} xl={3} className="my-4">
+            <Col xs={12} md={4} xl={3} className="my-4">
               <Card style={{ width: "18rem" }} key={b.id}>
                 <Card.Img variant="top" src={b.img} />
                 <Card.Body>
